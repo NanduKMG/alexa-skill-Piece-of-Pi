@@ -1,0 +1,16 @@
+{
+  "name": "testcli",
+  "version": "1.0.0",
+  "description": "new cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "alexa-sdk": "^1.0.25",
+    "chemical-equation-balancer": "^1.0.2",
+    "chemical-formula": "^2.0.0"
+  }
+}
