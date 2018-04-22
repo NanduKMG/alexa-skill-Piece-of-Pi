@@ -1,0 +1,2149 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "piece of pi",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": [
+                        "yes",
+                        "help me",
+                        "what should i do",
+                        "give example",
+                        "give examples",
+                        "help"
+                    ]
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": [
+                        "end",
+                        "thank you stop",
+                        "exit",
+                        "stop this",
+                        "okay stop"
+                    ]
+                },
+                {
+                    "name": "chemIntent",
+                    "slots": [
+                        {
+                            "name": "aComp",
+                            "type": "compound"
+                        },
+                        {
+                            "name": "bComp",
+                            "type": "compound"
+                        },
+                        {
+                            "name": "cComp",
+                            "type": "compound"
+                        },
+                        {
+                            "name": "dComp",
+                            "type": "compound"
+                        },
+                        {
+                            "name": "pComp",
+                            "type": "compound"
+                        },
+                        {
+                            "name": "qComp",
+                            "type": "compound"
+                        }
+                    ],
+                    "samples": [
+                        "solve {aComp} plus {bComp} gives {pComp} plus {qComp}",
+                        "balance this {aComp} plus {bComp} giving {pComp} plus {qComp}",
+                        "balance  {aComp} plus {bComp} plus {cComp} gives {pComp} plus {qComp}",
+                        "balance {aComp} plus {bComp} gives {pComp}",
+                        " {aComp} plus {bComp} plus {cComp} gives {pComp} plus {qComp}",
+                        "{aComp} plus {bComp} gives {pComp} ",
+                        "{aComp} plus {bComp} gives {pComp} plus {qComp}"
+                    ]
+                },
+                {
+                    "name": "algebraIntent",
+                    "slots": [
+                        {
+                            "name": "vblA",
+                            "type": "variable"
+                        },
+                        {
+                            "name": "op",
+                            "type": "operator"
+                        },
+                        {
+                            "name": "vblB",
+                            "type": "variable"
+                        },
+                        {
+                            "name": "exponent",
+                            "type": "exponent"
+                        },
+                        {
+                            "name": "exponentA",
+                            "type": "exponent"
+                        },
+                        {
+                            "name": "exponentB",
+                            "type": "exponent"
+                        }
+                    ],
+                    "samples": [
+                        "{vblA} {exponentA} {op} {vblB} {exponentB} ",
+                        "{vblA} {op} {vblB} the whole raise to {exponent}",
+                        "{vblA} {op} {vblB} the whole {exponent}"
+                    ]
+                },
+                {
+                    "name": "trigAddIntent",
+                    "slots": [
+                        {
+                            "name": "trigFunc",
+                            "type": "trigno"
+                        },
+                        {
+                            "name": "vblA",
+                            "type": "variable"
+                        },
+                        {
+                            "name": "operator",
+                            "type": "operator"
+                        },
+                        {
+                            "name": "vblB",
+                            "type": "variable"
+                        }
+                    ],
+                    "samples": [
+                        "{trigFunc} function of {vblA} {operator} {vblB}",
+                        "{trigFunc} {vblA} {operator} {vblB}",
+                        "{trigFunc} of  {vblA} {operator} {vblB}"
+                    ]
+                },
+                {
+                    "name": "doubleangleIntent",
+                    "slots": [
+                        {
+                            "name": "trigFunc",
+                            "type": "trigno"
+                        },
+                        {
+                            "name": "variable",
+                            "type": "variable"
+                        },
+                        {
+                            "name": "trigCond",
+                            "type": "trigno"
+                        }
+                    ],
+                    "samples": [
+                        "expand {trigFunc} of two {variable} in terms of {trigCond}",
+                        "expand {trigFunc} of two {variable}",
+                        "expand {trigFunc} two {variable}"
+                    ]
+                },
+                {
+                    "name": "areaIntent",
+                    "slots": [
+                        {
+                            "name": "polyOp",
+                            "type": "polyOp"
+                        },
+                        {
+                            "name": "polyShape",
+                            "type": "shape"
+                        }
+                    ],
+                    "samples": [
+                        "{polyOp} of {polyShape}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.RepeatIntent",
+                    "samples": [
+                        "didn't get that",
+                        "sorry",
+                        "didn't catch that"
+                    ]
+                },
+                {
+                    "name": "logarithmIntent",
+                    "slots": [
+                        {
+                            "name": "vblA",
+                            "type": "variable"
+                        },
+                        {
+                            "name": "logOp",
+                            "type": "logOp"
+                        },
+                        {
+                            "name": "vblB",
+                            "type": "variable"
+                        }
+                    ],
+                    "samples": [
+                        "logarithm of {vblA} {logOp} {vblB}",
+                        "log {vblA} {logOp} {vblB}"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "compound",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "CH3CHO",
+                                "synonyms": [
+                                    "C.H. three C.H.O.",
+                                    "C. two H. four O.",
+                                    "Acetaldehyde"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H5NO",
+                                "synonyms": [
+                                    "C. two H. five N.O.",
+                                    "Acetamide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3COOH",
+                                "synonyms": [
+                                    "C.H. three C.O.O.H.",
+                                    "acetic acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C3H6O",
+                                "synonyms": [
+                                    "C. three H. six O.",
+                                    "Acetone"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H3N",
+                                "synonyms": [
+                                    "C. two H. three N.",
+                                    "Acetonitrile"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "AlCl3",
+                                "synonyms": [
+                                    "A.l.C.l. three ",
+                                    "Aluminium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na",
+                                "synonyms": [
+                                    "N.a",
+                                    "n.a",
+                                    "Sodium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2O",
+                                "synonyms": [
+                                    "water",
+                                    "h. two o."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CO2",
+                                "synonyms": [
+                                    "Carbon Dioxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Al(NO3)3",
+                                "synonyms": [
+                                    "A.l.(.N.O. three ). three ",
+                                    "A.l.N.O. three thrice",
+                                    "Aluminium Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Al2(SO4)3",
+                                "synonyms": [
+                                    "A.l. two (.S.O. four ). three ",
+                                    "A.l. two S.O. four thrice",
+                                    "Aluminium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NH3",
+                                "synonyms": [
+                                    "N.H. three ",
+                                    "Ammonia"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3COONH4",
+                                "synonyms": [
+                                    "C.H. three C.O.O.N.H. four ",
+                                    "Ammonium Acetate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(NH4)2CO3",
+                                "synonyms": [
+                                    "(.N.H. four ). two C.O. three ",
+                                    "Ammonium Carbonate",
+                                    "N.H. four twice C.O. three"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NH4Cl",
+                                "synonyms": [
+                                    "N.H. four C.l.",
+                                    "Ammonium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(NH4)2Cr2O7",
+                                "synonyms": [
+                                    "(.N.H. four ). two C.r. two O. seven ",
+                                    "N.H. four twice C.r. two O. seven",
+                                    "Ammonium Dichromate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NH4OH",
+                                "synonyms": [
+                                    "N.H. four O.H.",
+                                    "Ammonium Hydroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NH4NO3",
+                                "synonyms": [
+                                    "N.H. four N.O. three ",
+                                    "Ammonium Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(NH4)2C2O4",
+                                "synonyms": [
+                                    "(.N.H. four ). two C. two O. four ",
+                                    "N.H. four twice C. two O. four",
+                                    "Ammonium Oxalate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(NH4)2SO4",
+                                "synonyms": [
+                                    "(.N.H. four ). two S.O. four ",
+                                    "N.H. four twice S.O. four",
+                                    "Ammonium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SbCl3",
+                                "synonyms": [
+                                    "S.b.C.l. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SbCl5",
+                                "synonyms": [
+                                    "S.b.C.l. five "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "BaCl2",
+                                "synonyms": [
+                                    "B.a.C.l. two ",
+                                    "Barium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ba(OH)2",
+                                "synonyms": [
+                                    "B.a.(.O.H.). two ",
+                                    "B.a.O.H. twice",
+                                    "Barium Hydroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ba(NO3)2",
+                                "synonyms": [
+                                    "B.a.(.N.O. three ). two ",
+                                    "B.a.N.O. three twice",
+                                    "Barium Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "BiCl3",
+                                "synonyms": [
+                                    "B.i.C.l. three ",
+                                    "Bismuth Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bi(NO3)3",
+                                "synonyms": [
+                                    "B.i.(.N.O. three ). three ",
+                                    "B.i.N.O. three thrice",
+                                    "Bismuth Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C4H10O",
+                                "synonyms": [
+                                    "C. four H. one  zero O.",
+                                    "C. four H. ten O.",
+                                    "Butanol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C4H8O2",
+                                "synonyms": [
+                                    "C. four H. eight O. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cd(NO3)2",
+                                "synonyms": [
+                                    "C.d.(.N.O. three ). two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CdSO4",
+                                "synonyms": [
+                                    "C.d.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CaCl2",
+                                "synonyms": [
+                                    "C.a.C.l. two ",
+                                    "Calcium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ca(OH)2",
+                                "synonyms": [
+                                    "C.a.(.O.H.). two ",
+                                    "C.a.O.H. twice",
+                                    "Calcium Hydroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ca(NO3)2",
+                                "synonyms": [
+                                    "C.a.(.N.O. three ). two ",
+                                    "C.a.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CaSO4",
+                                "synonyms": [
+                                    "C.a.S.O. four ",
+                                    "Calcium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CS2",
+                                "synonyms": [
+                                    "C.S. two ",
+                                    "Carbon disulfide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H3ClO2",
+                                "synonyms": [
+                                    "C. two H. three C.l.O. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HAuCl4",
+                                "synonyms": [
+                                    "H.A.u.C.l. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CHCl3",
+                                "synonyms": [
+                                    "C.H.C.l. three ",
+                                    "Chloroform"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2PtCl6",
+                                "synonyms": [
+                                    "H. two P.t.C.l. six "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CrCl3",
+                                "synonyms": [
+                                    "C.r.C.l. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cr(NO3)3",
+                                "synonyms": [
+                                    "C.r.(.N.O. three ). three ",
+                                    "C.r.N.O. three thrice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cr2(SO4)3",
+                                "synonyms": [
+                                    "C.r. two (.S.O. four ). three ",
+                                    "C.r. two S.O. four thrice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CrO3",
+                                "synonyms": [
+                                    "C.r.O. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C6H8O7",
+                                "synonyms": [
+                                    "C. six H. eight O. seven ",
+                                    "Citric Acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Co(NO3)2",
+                                "synonyms": [
+                                    "C.o.(.N.O. three ). two ",
+                                    "C.o.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CoSO4",
+                                "synonyms": [
+                                    "C.o.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cu2Cl2",
+                                "synonyms": [
+                                    "C.u. two C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CuCl2",
+                                "synonyms": [
+                                    "C.u.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cu(NO3)2",
+                                "synonyms": [
+                                    "C.u.(.N.O. three ). two ",
+                                    "C.u.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CuSO4",
+                                "synonyms": [
+                                    "C.u.S.O. four ",
+                                    "Copper Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H2Cl2O2",
+                                "synonyms": [
+                                    "C. two H. two C.l. two O. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(C2H5)2O",
+                                "synonyms": [
+                                    "(.C. two H. five ). two O.",
+                                    "C. two H. five twice O",
+                                    "diethyl ether"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(CH3CNOH)2",
+                                "synonyms": [
+                                    "(.C.H. three C.N.O.H.). two ",
+                                    "C.H. three C.N.O.H. twice",
+                                    "dimethylglyoxime"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C2H5OH",
+                                "synonyms": [
+                                    "C. two H. five O.H.",
+                                    "Ethanol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "(CH2OH)2",
+                                "synonyms": [
+                                    "(.C.H. two O.H.). two ",
+                                    "C.H. two O.H. twice",
+                                    "Ethylene glycol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HCHO",
+                                "synonyms": [
+                                    "H.C.H.O.",
+                                    "C.H. two O.",
+                                    "Formaldehyde"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH2O2",
+                                "synonyms": [
+                                    "C.H. two O. two ",
+                                    "Formic Acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C6H12O6",
+                                "synonyms": [
+                                    "C. six H. one  two O. six ",
+                                    "Glucose",
+                                    "Fructose"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C3H8O3",
+                                "synonyms": [
+                                    "C. three H. eight O. three ",
+                                    "Glycerol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2SiF6",
+                                "synonyms": [
+                                    "H. two S.i.F. six "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "N2H4",
+                                "synonyms": [
+                                    "N. two H. four ",
+                                    "Hydrazine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HBr",
+                                "synonyms": [
+                                    "H.B.r.",
+                                    "Hydrobromic acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HCl",
+                                "synonyms": [
+                                    "H.C.l.",
+                                    "Hydrochloric acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HCN",
+                                "synonyms": [
+                                    "H.C.N.",
+                                    "Hydrocyanic acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HF",
+                                "synonyms": [
+                                    "H.F.",
+                                    "Hydrofluoric acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2O2",
+                                "synonyms": [
+                                    "H. two O. two ",
+                                    "Hydrogen peroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HI",
+                                "synonyms": [
+                                    "H.I.",
+                                    "Iodic acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "FeSo4",
+                                "synonyms": [
+                                    "F.e.S.o. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "FeCl3",
+                                "synonyms": [
+                                    "F.e.C.l. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fe(NO3)3",
+                                "synonyms": [
+                                    "F.e.(.N.O. three ). three ",
+                                    "F.e.N.O. three thrice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fe2(SO4)3",
+                                "synonyms": [
+                                    "F.e. two (.S.O. four ). three ",
+                                    "F. three . two S.O. four thrice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C3H6O3",
+                                "synonyms": [
+                                    "C. three H. six O. three ",
+                                    "Lactic acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "PbCl2",
+                                "synonyms": [
+                                    "P.b.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Pb(NO3)2",
+                                "synonyms": [
+                                    "P.b.(.N.O. three ). two ",
+                                    "P.b.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "LiCl",
+                                "synonyms": [
+                                    "L.i.C.l.",
+                                    "Lithium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MgCl2",
+                                "synonyms": [
+                                    "M.g.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Mg(NO3)2",
+                                "synonyms": [
+                                    "M.g.(.N.O. three ). two ",
+                                    "M.g.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MgSO4",
+                                "synonyms": [
+                                    "M.g.S.O. four ",
+                                    "Magnesium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MnCl2",
+                                "synonyms": [
+                                    "M.n.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "MnSO4",
+                                "synonyms": [
+                                    "M.n.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HgCl2",
+                                "synonyms": [
+                                    "H.g.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Hg(NO3)2",
+                                "synonyms": [
+                                    "H.g.(.N.O. three ). two ",
+                                    "H.g.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HgSO4",
+                                "synonyms": [
+                                    "H.g.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3OH",
+                                "synonyms": [
+                                    "C.H. three O.H."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C3H6O2",
+                                "synonyms": [
+                                    "C. three H. six O. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NiCl2",
+                                "synonyms": [
+                                    "N.i.C.l. two ",
+                                    "Nickel Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ni(NO3)2",
+                                "synonyms": [
+                                    "N.i.(.N.O. three ). two ",
+                                    "N.i.N.O. three twice"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NiSO4",
+                                "synonyms": [
+                                    "N.i.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HNO3",
+                                "synonyms": [
+                                    "H.N.O. three ",
+                                    "Nitric Acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HClO4",
+                                "synonyms": [
+                                    "H.C.l.O. four ",
+                                    "Perchloric acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C6H6O",
+                                "synonyms": [
+                                    "C. six H. six O.",
+                                    "phenol"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H3PO4",
+                                "synonyms": [
+                                    "H. three P.O. four ",
+                                    "Phosphoric acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KHCO3",
+                                "synonyms": [
+                                    "K.H.C.O. three ",
+                                    "Pottasium bicarbonate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KBrO3",
+                                "synonyms": [
+                                    "K.B.r.O. three ",
+                                    "Pottasium Bromate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KBr",
+                                "synonyms": [
+                                    "K.B.r.",
+                                    "Pottasium Bromide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "K2CO3",
+                                "synonyms": [
+                                    "K. two C.O. three ",
+                                    "Pottasium Carbonate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KClO3",
+                                "synonyms": [
+                                    "K.C.l.O. three ",
+                                    "Pottasium Chlorate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KCl",
+                                "synonyms": [
+                                    "K.C.l.",
+                                    "Pottasium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "K2Cr2O7",
+                                "synonyms": [
+                                    "K. two C.r. two O. seven ",
+                                    "Pottasium Dichromate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KH2PO4",
+                                "synonyms": [
+                                    "K.H. two P.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KOH",
+                                "synonyms": [
+                                    "K.O.H.",
+                                    "Pottasium Hydroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KI",
+                                "synonyms": [
+                                    "K.I.",
+                                    "Pottasium Iodide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KNO3",
+                                "synonyms": [
+                                    "K.N.O. three ",
+                                    "Pottasium Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KNO2",
+                                "synonyms": [
+                                    "K.N.O. two ",
+                                    "Pottasium Nitrite"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KMnO4",
+                                "synonyms": [
+                                    "K.M.n.O. four ",
+                                    "Potassium permanganate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "K2SO4",
+                                "synonyms": [
+                                    "K. two S.O. four ",
+                                    "Potassium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "K2SO3",
+                                "synonyms": [
+                                    "K. two S.O. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "KCNS",
+                                "synonyms": [
+                                    "K.C.N.S."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "CH3CH2CH2OH",
+                                "synonyms": [
+                                    "C.H. three C.H. two C.H. two O.H."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C5H5N",
+                                "synonyms": [
+                                    "C. five H. five N."
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "AgNO3",
+                                "synonyms": [
+                                    "A.g.N.O. three ",
+                                    "Silver Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ag2SO4",
+                                "synonyms": [
+                                    "A.g. two S.O. four ",
+                                    "Silver Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaBr",
+                                "synonyms": [
+                                    "N.a.B.r.",
+                                    "Sodium Bromide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na2CO3",
+                                "synonyms": [
+                                    "N.a. two C.O. three ",
+                                    "Sodium Carbonate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaCl",
+                                "synonyms": [
+                                    "N.a.C.l.",
+                                    "Sodium Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "HCOONa",
+                                "synonyms": [
+                                    "H.C.O.O.N.a.",
+                                    "Sodium formate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaOH",
+                                "synonyms": [
+                                    "N.a.O.H.",
+                                    "Sodium Hydroxide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaNO3",
+                                "synonyms": [
+                                    "N.a.N.O. three ",
+                                    "Sodium Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "NaNO2",
+                                "synonyms": [
+                                    "N.a.N.O. two ",
+                                    "Sodium Nitrite"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na3PO4",
+                                "synonyms": [
+                                    "N.a. three P.O. four ",
+                                    "Sodium Phosphate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na2SO4",
+                                "synonyms": [
+                                    "N.a. two S.O. four ",
+                                    "Sodium Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na2S",
+                                "synonyms": [
+                                    "N.a. two S.",
+                                    "Sodium Sulfide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na2SO3",
+                                "synonyms": [
+                                    "N.a. two S.O. three ",
+                                    "Sodium sulphite"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Na2S2O3",
+                                "synonyms": [
+                                    "N.a. two S. two O. three ",
+                                    "Sodium thiosulfate",
+                                    "hypo"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SrCl2",
+                                "synonyms": [
+                                    "S.r.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SrSO4",
+                                "synonyms": [
+                                    "S.r.S.O. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2SO4",
+                                "synonyms": [
+                                    "H. two S.O. four ",
+                                    "Sulphuric Acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2SO3",
+                                "synonyms": [
+                                    "H. two S.O. three ",
+                                    "Sulfurous acid"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SnCl2",
+                                "synonyms": [
+                                    "S.n.C.l. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "SnCl4",
+                                "synonyms": [
+                                    "S.n.C.l. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ZnBr2",
+                                "synonyms": [
+                                    "Z.n.B.r. two ",
+                                    "Zinc Bromide"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ZnCl2",
+                                "synonyms": [
+                                    "Z.n.C.l. two ",
+                                    "Zinc Chloride"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Zn(NO3)2",
+                                "synonyms": [
+                                    "Z.n.(.N.O. three ). two ",
+                                    "Z.n.N.O. three twice",
+                                    "Zinc Nitrate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "ZnSO4",
+                                "synonyms": [
+                                    "Z.n.S.O. four ",
+                                    "Zinc Sulfate"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Al",
+                                "synonyms": [
+                                    "A.l.",
+                                    "Aluminum"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Bi",
+                                "synonyms": [
+                                    "B.i.",
+                                    "Bismuth"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cd",
+                                "synonyms": [
+                                    "C.d.",
+                                    "Cadmium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cr",
+                                "synonyms": [
+                                    "C.r.",
+                                    "Chromium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cu",
+                                "synonyms": [
+                                    "C.u.",
+                                    "Copper"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Au",
+                                "synonyms": [
+                                    "A.u.",
+                                    "Gold"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "In",
+                                "synonyms": [
+                                    "I.n.",
+                                    "Indium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Fe",
+                                "synonyms": [
+                                    "F.e.",
+                                    "Iron"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ir",
+                                "synonyms": [
+                                    "I.r.",
+                                    "Iridium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Pb",
+                                "synonyms": [
+                                    "P.b.",
+                                    "Lead"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Hg",
+                                "synonyms": [
+                                    "H.g.",
+                                    "Mercury"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ni",
+                                "synonyms": [
+                                    "N.i.",
+                                    "Nickel"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Os",
+                                "synonyms": [
+                                    "O.s.",
+                                    "Osmium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Pd",
+                                "synonyms": [
+                                    "P.d.",
+                                    "Palladium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Pt",
+                                "synonyms": [
+                                    "P.t.",
+                                    "Platinum"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Re",
+                                "synonyms": [
+                                    "R.e.",
+                                    "Rhenium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rh",
+                                "synonyms": [
+                                    "R.h.",
+                                    "Rhodium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ag",
+                                "synonyms": [
+                                    "A.g.",
+                                    "Silver"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ta",
+                                "synonyms": [
+                                    "T.a.",
+                                    "Tantalum"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sn",
+                                "synonyms": [
+                                    "S.n.",
+                                    "Tin"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ti",
+                                "synonyms": [
+                                    "T.i.",
+                                    "Titanium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "V",
+                                "synonyms": [
+                                    "V.",
+                                    "Vanadium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Zn",
+                                "synonyms": [
+                                    "Z.n.",
+                                    "Zinc"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Sb",
+                                "synonyms": [
+                                    "S.b.",
+                                    "Antimony"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "As",
+                                "synonyms": [
+                                    "A.s.",
+                                    "Arsenic"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Si",
+                                "synonyms": [
+                                    "S.i.",
+                                    "Silicon"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Te",
+                                "synonyms": [
+                                    "T.e.",
+                                    "Tellurium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "C",
+                                "synonyms": [
+                                    "C.",
+                                    "Carbon"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Se",
+                                "synonyms": [
+                                    "S.e.",
+                                    "Selenium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "S",
+                                "synonyms": [
+                                    "S.",
+                                    "Sulfur"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "H2",
+                                "synonyms": [
+                                    "H. two ",
+                                    "Hydrogen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "He",
+                                "synonyms": [
+                                    "H.e.",
+                                    "Helium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Li",
+                                "synonyms": [
+                                    "L.i.",
+                                    "Lithium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Be",
+                                "synonyms": [
+                                    "B.e.",
+                                    "Beryllium"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "B",
+                                "synonyms": [
+                                    "B.",
+                                    "Boron"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "N2",
+                                "synonyms": [
+                                    "N. two ",
+                                    "Nitrogen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "O2",
+                                "synonyms": [
+                                    "O. two ",
+                                    "Oxygen"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "F2",
+                                "synonyms": [
+                                    "F. two ",
+                                    "Fluorine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "I2",
+                                "synonyms": [
+                                    "I. two ",
+                                    "Iodine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cl2",
+                                "synonyms": [
+                                    "C.l. two ",
+                                    "Chlorine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Br2",
+                                "synonyms": [
+                                    "B.r. two ",
+                                    "Bromine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Xe",
+                                "synonyms": [
+                                    "X.e.",
+                                    "Xenon"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "XeF6",
+                                "synonyms": [
+                                    "X.e.F. six "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "XeOF4",
+                                "synonyms": [
+                                    "X.e.O.F. four "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "XeO3",
+                                "synonyms": [
+                                    "X.e.O. three "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "XeO2F2",
+                                "synonyms": [
+                                    "X.e.O. two F. two "
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "O3",
+                                "synonyms": [
+                                    "O. three ",
+                                    "Ozone"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "S3",
+                                "synonyms": [
+                                    "S. three "
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "variable",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "n"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "m"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "y"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "x"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "b"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "a"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "operator",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "plus",
+                                "synonyms": [
+                                    "+"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "minus",
+                                "synonyms": [
+                                    "-"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "exponent",
+                    "values": [
+                        {
+                            "id": "9",
+                            "name": {
+                                "value": "9",
+                                "synonyms": [
+                                    "nine",
+                                    "Nine"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "8",
+                            "name": {
+                                "value": "8",
+                                "synonyms": [
+                                    "eight"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "7",
+                            "name": {
+                                "value": "7",
+                                "synonyms": [
+                                    "seven"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "6",
+                            "name": {
+                                "value": "6",
+                                "synonyms": [
+                                    "six"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "5",
+                            "name": {
+                                "value": "5",
+                                "synonyms": [
+                                    "five"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "4",
+                            "name": {
+                                "value": "4",
+                                "synonyms": [
+                                    "four"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "3",
+                            "name": {
+                                "value": "3",
+                                "synonyms": [
+                                    "three",
+                                    "cube"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "2",
+                            "name": {
+                                "value": "2",
+                                "synonyms": [
+                                    "two",
+                                    "square",
+                                    "squared"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "1",
+                            "name": {
+                                "value": "1",
+                                "synonyms": [
+                                    "one"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "trigno",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "cosec",
+                                "synonyms": [
+                                    "cosecant"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sec",
+                                "synonyms": [
+                                    "secant"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cot",
+                                "synonyms": [
+                                    "co tangent"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "tan",
+                                "synonyms": [
+                                    "tangent"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "cos",
+                                "synonyms": [
+                                    "cosine"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "sin",
+                                "synonyms": [
+                                    "sine"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "shape",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Sphere"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cylinder"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cuboid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cube"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Cone"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Ellipse"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Trapezoid"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Circle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Rectangle"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Square"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Triangle"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "polyOp",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "Perimeter",
+                                "synonyms": [
+                                    "Circumference"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Volume"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "Area"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "logOp",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "power",
+                                "synonyms": [
+                                    "raised to",
+                                    "to the power"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "mul",
+                                "synonyms": [
+                                    "times",
+                                    "into",
+                                    "multiplied by",
+                                    "multiplied"
+                                ]
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "div",
+                                "synonyms": [
+                                    "divides",
+                                    "by",
+                                    "divided by"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+}
