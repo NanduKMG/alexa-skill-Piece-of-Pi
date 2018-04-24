@@ -34,13 +34,22 @@ const STOP_MESSAGE = 'Goodbye!';
 //=========================================================================================================================================
 //data associated with queries
 //=========================================================================================================================================
+
+const QUERY_MSG=
+[
+    ". would you like to ask more formulas? ",
+    ". would you like help with anything else? "
+    
+
+];
+
 const sorryMsg=
 [
-    "Sorry I did not get that ",
+    "Sorry I did not get that. Could you say that again? ",
     "Can you repeat that please ?",
-    "Sorry I did not understand that",
+    "Sorry I did not understand that. Can you repeat?",
     "What was that again ?",
-    "Yeah, No I didn't get that"
+    "Yeah, No I didn't get that. Please repeat that?"
 ];
 
 //math egs
@@ -642,7 +651,7 @@ const handlers =
 
             st = trigAdd(func,a,b,op) ; 
             this.attributes.lastSpeech = st ; 
-            this.response.speak(st).listen("Would you like a piece of pi ?");
+            this.response.speak(st + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
             this.emit(':responseReady');
         }
         catch(e)
@@ -664,7 +673,7 @@ const handlers =
             var st = DoubleAngle(func,a,cond);
 
             this.attributes.lastSpeech = st ; 
-            this.response.speak(st).listen("Would you like a piece of pi ?");
+            this.response.speak(st + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
             this.emit(':responseReady');
         }
         catch(e)
@@ -683,11 +692,11 @@ const handlers =
 
             if(shapeData[shape][op]){
                 st = shapeData[shape][op][Math.floor(Math.random()*shapeData[shape][op].length )] ;
-                this.response.speak(st).listen("Would you like a piece of pi ?");
+                this.response.speak(st + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
                 this.attributes.lastSpeech = st ; 
             }
             else{
-                this.response.speak("Sorry. Don't know that yet.").listen("Would you like a piece of pi ?");
+                this.response.speak("Sorry. Don't know that yet." + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
                 this.attributes.lastSpeech = HELP_MESSAGE ;
 
             }
@@ -711,7 +720,7 @@ const handlers =
             a = variableSpellOut(a);
             b = variableSpellOut(b);
 
-            this.response.speak(logarithm(a,b,op));
+            this.response.speak(logarithm(a,b,op) + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
             this.emit(':responseReady');
         }
         catch(e)
@@ -771,7 +780,7 @@ const handlers =
                 st = apology() + ' you can try saying like .' + CHEM_EG[Math.floor(Math.random()*CHEM_EG.length)];
             }
             this.attributes.lastSpeech = st;
-            this.response.speak(st).listen("Would you like a piece of pi ?");
+            this.response.speak(st + "Balanced it! remember me when you need a piece of pi !");
             this.emit(':responseReady');
         }
         catch(e)
@@ -798,7 +807,7 @@ const handlers =
                 var st = ComputeBinomial(x,a,b,op)
                 this.attributes.lastSpeech = st;
 
-                this.response.speak(st).listen("Would you like a piece of pi ?");
+                this.response.speak(st + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
             }
             else{
                 var n1 = this.event.request.intent.slots.exponentA.resolutions.resolutionsPerAuthority[0].values[0].value.name;
@@ -813,11 +822,11 @@ const handlers =
                 var st;
                 if(n1==n2){
                     st = PowerSubtract(n1,a,b);
-                    this.response.speak(st).listen("Would you like a piece of pi ?");
+                    this.response.speak(st + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?");
                     this.attributes.lastSpeech = st;            
                 }
                 else{
-                    this.response.speak("Sorry. No found expansion for that formula.").listen("Would you like a piece of pi ?") ;   
+                    this.response.speak("Sorry. No found expansion for that formula"  + QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)] ).listen("Would you like a piece of pi ?") ;   
                     this.attributes.lastSpeech = HELP_MESSAGE;
                 }
 
@@ -827,7 +836,7 @@ const handlers =
         }
         catch(e)
         {
-            this.response.speak(apology()).listen("Would you like a piece of pi ?");
+            this.response.speak(apology() ).listen("Would you like a piece of pi ?");
             this.emit(':responseReady');
         }
     },
@@ -853,7 +862,7 @@ const handlers =
    // },
    'AMAZON.HelpIntent': function () {
 
-        this.response.speak(HELP_MESSAGE + ' for example you can say like .' + COMB_EG[Math.floor(Math.random()*CHEM_EG.length)]).listen(); 
+        this.response.speak(HELP_MESSAGE + ' for example you can say like .' + COMB_EG[Math.floor(Math.random()*CHEM_EG.length)]).listen("Would you like a piece of pi ?"); 
         this.emit(':responseReady'); 
     },
 
@@ -866,7 +875,7 @@ const handlers =
     
 
    'AMAZON.RepeatIntent': function () { 
-        this.response.speak(this.attributes.lastSpeech ).listen("Would you like a piece of pi ?"); 
+        this.response.speak(this.attributes.lastSpeech +   QUERY_MSG[Math.floor(Math.random()*QUERY_MSG.length)]).listen("Would you like a piece of pi ?"); 
         this.emit(':responseReady'); 
     },
     'AMAZON.CancelIntent': function () {
