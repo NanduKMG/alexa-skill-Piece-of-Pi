@@ -1,4 +1,4 @@
-Terms of use
+# Terms of use
 This Terms of Use has been compiled to help the users. Please read our Terms of use carefully to get a clear understanding of how we collect, use, protect or otherwise handle your Personally Identifiable Information in accordance with our App/Alexa Skill.
 
 If you continue to use this App/Alexa Skill, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our privacy policy govern relationship with you in relation to this App/Alexa Skill. If you disagree with any part of these terms and conditions, please do not use our App/Alexa Skill.
